@@ -7,13 +7,16 @@
     <title>Chat App</title>
   </head>
   <body>
-    <h1>Hey There</h1>
-
+    <h1 id="myTime"></h1>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       let socket = io();
+      // socket.on("message", (msg) => {
+      //   document.write(msg);
+      // });
+
       socket.on("message", (msg) => {
-        document.write(msg);
+        document.getElementById("myTime").innerHTML = msg;
       });
     </script>
   </body>

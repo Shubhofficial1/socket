@@ -9,9 +9,16 @@ const io = new Server(expressServer);
 io.on("connection", (socket) => {
   console.log("New User Connected !");
 
-  setTimeout(() => {
-    socket.send("Hello There");
-  }, 5000);
+  setInterval(() => {
+    let date = new Date();
+    let time = date.getTime();
+    socket.send(time);
+  }, 1000);
+
+  //   setTimeout(() => {
+  //     socket.send("Hello There");
+  //   }, 5000);
+
   //   socket.on("disconnect", () => {
   //     console.log("User Disconnected !");
   //   });
