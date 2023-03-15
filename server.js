@@ -29,11 +29,17 @@ io.on("connection", (socket) => {
 
   // Implementation of custom event
 
-  setInterval(() => {
-    let date = new Date();
-    let time = date.getTime();
-    socket.emit("MyEvent", time);
-  }, 1000);
+  //   setInterval(() => {
+  //     let date = new Date();
+  //     let time = date.getTime();
+  //     socket.emit("MyEvent", time);
+  //   }, 1000);
+
+  //   Getting Data from client to server
+
+  socket.on("message", (msg) => {
+    console.log(msg);
+  });
 });
 
 app.get("/", (req, res) => {

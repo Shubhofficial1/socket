@@ -7,7 +7,9 @@
     <title>Chat App</title>
   </head>
   <body>
-    <h1 id="myTime"></h1>
+    <!-- <h1 id="myTime"></h1> -->
+    <input type="text" id="name" />
+    <button id="send" onclick="send()">Send</button>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       let socket = io();
@@ -26,9 +28,14 @@
 
       // Implementation of custom event
 
-      socket.on("MyEvent", (msg) => {
-        document.getElementById("myTime").innerHTML = msg;
-      });
+      // socket.on("MyEvent", (msg) => {
+      //   document.getElementById("myTime").innerHTML = msg;
+      // });
+
+      function send() {
+        let name = document.getElementById("name").value;
+        socket.send(name);
+      }
     </script>
   </body>
 </html>
