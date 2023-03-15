@@ -43,9 +43,13 @@ io.on("connection", (socket) => {
 
   //   getting Data from client to server using custom Event
 
-  socket.on("MyEvent", (msg) => {
-    console.log(msg);
-  });
+  // socket.on("MyEvent", (msg) => {
+  //   console.log(msg);
+  // });
+
+  // Broadcast Implementation
+
+  io.sockets.emit("MyBroadcast", "Hello World");
 });
 
 app.get("/", (req, res) => {
