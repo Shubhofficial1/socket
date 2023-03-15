@@ -13,7 +13,7 @@
     <h1 id="msg"></h1>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      let socket = io();
+      // let socket = io();
 
       // Implementation for Data transfer after some time
 
@@ -43,7 +43,13 @@
       //   socket.emit("MyEvent", name);
       // }
 
-      socket.on("MyBroadcast", (data) => {
+      // socket.on("MyBroadcast", (data) => {
+      //   document.getElementById("msg").innerHTML = data;
+      // });
+
+      // namespace
+      let socket = io("/first");
+      socket.on("MyEvent", (data) => {
         document.getElementById("msg").innerHTML = data;
       });
     </script>
