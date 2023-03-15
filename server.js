@@ -37,7 +37,13 @@ io.on("connection", (socket) => {
 
   //   Getting Data from client to server
 
-  socket.on("message", (msg) => {
+  //   socket.on("message", (msg) => {
+  //     console.log(msg);
+  //   });
+
+  //   getting Data from client to server using custom Event
+
+  socket.on("MyEvent", (msg) => {
     console.log(msg);
   });
 });
