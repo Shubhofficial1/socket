@@ -54,10 +54,10 @@ const io = new Server(expressServer);
 
 // Namespace
 
-let first = io.of("/first");
-first.on("connection", (socket) => {
-  first.emit("MyEvent", "Hello First");
-});
+// let first = io.of("/first");
+// first.on("connection", (socket) => {
+//   first.emit("MyEvent", "Hello First");
+// });
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
