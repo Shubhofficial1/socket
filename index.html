@@ -11,11 +11,22 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
       let socket = io();
+
+      // Implementation for Data transfer after some time
+
       // socket.on("message", (msg) => {
       //   document.write(msg);
       // });
 
-      socket.on("message", (msg) => {
+      // Implementation of Data transfer on certain intervals
+
+      // socket.on("message", (msg) => {
+      //   document.getElementById("myTime").innerHTML = msg;
+      // });
+
+      // Implementation of custom event
+
+      socket.on("MyEvent", (msg) => {
         document.getElementById("myTime").innerHTML = msg;
       });
     </script>

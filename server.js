@@ -9,19 +9,31 @@ const io = new Server(expressServer);
 io.on("connection", (socket) => {
   console.log("New User Connected !");
 
-  setInterval(() => {
-    let date = new Date();
-    let time = date.getTime();
-    socket.send(time);
-  }, 1000);
+  //   socket.on("disconnect", () => {
+  //     console.log("User Disconnected !");
+  //   });
+
+  // Implementation for Data transfer after some time
 
   //   setTimeout(() => {
   //     socket.send("Hello There");
   //   }, 5000);
 
-  //   socket.on("disconnect", () => {
-  //     console.log("User Disconnected !");
-  //   });
+  // Implementation of Data transfer on certain intervals
+
+  //   setInterval(() => {
+  //     let date = new Date();
+  //     let time = date.getTime();
+  //     socket.send(time);
+  //   }, 1000);
+
+  // Implementation of custom event
+
+  setInterval(() => {
+    let date = new Date();
+    let time = date.getTime();
+    socket.emit("MyEvent", time);
+  }, 1000);
 });
 
 app.get("/", (req, res) => {
